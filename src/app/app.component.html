@@ -1,2 +1,17 @@
-<app-dialog *ngIf="showDialog" [title]="'Custom Dialog Title'" (closeDialog)="closeDialog()"><p>some content in here</p></app-dialog>
-<button (click)="openDialog()">Open dialog</button>
+<app-dialog *ngIf="showDialog1" [title]="'First dialog title'" (closeDialog)="closeDialog(1)"><p>some content in here</p></app-dialog>
+<button (click)="openDialog(1)">Open dialog 1</button>
+
+<app-dialog *ngIf="showDialog2" [title]="'Second dialog title'" (closeDialog)="closeDialog(2)">
+    <img src="https://picsum.photos/200/300" alt="Placeholder Image">
+    <p>With a paragraph as well</p>
+</app-dialog>
+<button (click)="openDialog(2)">Open Dialog 2</button>
+
+<app-dialog *ngIf="showDialog3" [title]="'Third dialog title'" (closeDialog)="closeDialog(3)">
+    <form (ngSubmit)="submitForm()">
+        <label for="inputText">Enter text:</label>
+        <input type="text" id="inputText" name="text" required>
+        <button type="submit">Submit</button>
+    </form>
+</app-dialog>
+<button (click)="openDialog(3)">Open Dialog 3</button>
