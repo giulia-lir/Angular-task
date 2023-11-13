@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dialog',
@@ -11,6 +12,7 @@ export class DialogComponent {
     throw new Error('Method not implemented.');
   }
   @Input() title: string = 'Dialog';
+  @Input() content: any;
   @Output() closeDialog: EventEmitter<void> = new EventEmitter<void>();
 
   onCloseButtonClick(): void {
