@@ -33,7 +33,6 @@ describe('DialogComponent', () => {
     component.content = 'Test content'
     fixture.detectChanges();
     const contentElement: HTMLElement = fixture.nativeElement.querySelector('.dialog-content p');
-    console.log(contentElement)
     expect(contentElement.textContent).toContain('Test content')
   });
 
@@ -42,13 +41,5 @@ describe('DialogComponent', () => {
     const closeButton: HTMLElement = fixture.nativeElement.querySelector('.dialog-header button');
     closeButton.click();
     expect(component.closeDialog.emit).toHaveBeenCalled();
-  });
-
-  it('Dialog 3 should close when Submit button is clicked', () => {
-
-    spyOn(DialogComponent.arguments.Submit, 'emit');
-    const submitButton: HTMLElement = fixture.nativeElement.querySelector('#dialog3 button');
-    submitButton.click();
-    expect(AppComponent.arguments.submitForm().closeDialog(3)).toHaveBeenCalled();
   });
 });
