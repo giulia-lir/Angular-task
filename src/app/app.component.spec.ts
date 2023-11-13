@@ -1,7 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { DialogComponent } from './dialog/dialog.component';
-import { CommonModule } from '@angular/common';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -16,23 +14,27 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the three buttons available`, () => {
+  it(`3 buttons should be present`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    
-    const button1 = fixture.nativeElement.querySelector('button:contains("Open Dialog 1")');
-    const button2 = fixture.nativeElement.querySelector('button:contains("Open Dialog 2")');
-    const button3 = fixture.nativeElement.querySelector('button:contains("Open Dialog 3")');
 
-    expect(button1).toBeTruthy();
-    expect(button2).toBeTruthy();
-    expect(button3).toBeTruthy();
-  });
+    const btn = fixture.debugElement.nativeElement.querySelector('#button1');
+    const btn2 = fixture.debugElement.nativeElement.querySelector('#button2');
+    const btn3 = fixture.debugElement.nativeElement.querySelector('#button3');
 
-  it('should render title', () => {
+    expect(btn).toBeTruthy();
+    expect(btn2).toBeTruthy();
+    expect(btn3).toBeTruthy();
+  })
+
+  it(`Buttons tags should be "Open dialog 1/2/3"`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Angular_Task');
+
+    const btn = fixture.debugElement.nativeElement.querySelector('#button1');
+    const btn2 = fixture.debugElement.nativeElement.querySelector('#button2');
+    const btn3 = fixture.debugElement.nativeElement.querySelector('#button3');
+
+    expect(btn.innerHTML).toBe('Open dialog 1');
+    expect(btn2.innerHTML).toBe('Open dialog 2');
+    expect(btn3.innerHTML).toBe('Open dialog 3');
   });
 });

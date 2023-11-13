@@ -7,6 +7,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrl: './dialog.component.css'
 })
 export class DialogComponent {
+  close(close: any, arg1: string) {
+    throw new Error('Method not implemented.');
+  }
   @Input() title: string = 'Dialog';
   @Output() closeDialog: EventEmitter<void> = new EventEmitter<void>();
 
