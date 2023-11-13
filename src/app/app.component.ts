@@ -10,5 +10,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Nordea_Angular_Task';
+  title = 'Angular_Task';
 }
